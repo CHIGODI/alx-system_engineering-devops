@@ -1,2 +1,2 @@
 #!/bin/bash
-echo cC | tr -d 'cC'
+tr -d 'cC' < cC 
