@@ -1,2 +1,2 @@
 #!/bin/bash
-'NR%2 == 1' 
+sed -n '1p;0~2p' 
