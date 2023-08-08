@@ -1,2 +1,2 @@
 #!/bin/bash
-echo awk 'NR%2 == 1' 
+'NR%2 == 1' 
