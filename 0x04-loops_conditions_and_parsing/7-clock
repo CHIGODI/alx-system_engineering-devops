@@ -2,9 +2,14 @@
 # display hours from 0 to 12
 # display minutes from 1 to 59
 
-for ((h=0; h<=12; h++)); do
-    echo -e "Hour: $h"
-    for((m=1; m<60; m++)); do
-    	echo -e "$m"
+h=1
+
+while [ $h -le 12 ]; do
+    echo "Hour: $h"
+    m=1
+    while [ $m -le 59 ]; do
+	echo "$m"
+	m=$(( m+1 ))
     done
+    h=$(( h+1 ))
 done
