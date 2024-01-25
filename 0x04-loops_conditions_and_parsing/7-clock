@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# display hours from 0 to 12
+# display minutes from 1 to 59
+
+for ((h=0; h<=12; h++)); do
+    echo -e "Hour: $h"
+    for((m=1; m<60; m++)); do
+    	echo -e "$m"
+    done
+done
