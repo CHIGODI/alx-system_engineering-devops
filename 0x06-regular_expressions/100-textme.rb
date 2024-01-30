@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-pattern = /from:(\S*)\w|to:(\S*)\w|flags:(\S*)\w/
+pattern = /from:(\S*)(?=])|to:(\S*)(?=])|flags:(\S*)(?=])/
 result = ARGV[0].scan(pattern).flatten.compact.join(',')
 puts result
