@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 #show active Ips
 
 ifconfig | grep -oP 'inet \K[\d.]+'
