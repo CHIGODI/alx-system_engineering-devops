@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # ping
 
 if [ -z "$1" ]; then
