@@ -1,0 +1,18 @@
+https://imgur.com/undefined - link to img
+
+You must be able to explain some specifics about this infrastructure:
+For every additional element, why you are adding it
+
+Load-Balancer (HAProxy) as cluster:
+If one HAProxy instance fails or becomes unavailable, another instance takes
+over, ensuring uninterrupted service. This eliminates a single point of failure.
+
+HA proxy - evenly distributes incoming traffic among multiple servers.
+Benefits: High availability, fault tolerance, and improved performance.
+Web Server, Application Server, Database:
+
+each component on own server
+Splitting these components onto separate servers provides modularity,
+scalability, and fault isolation.
+Benefits: Prevents a failure in one component from affecting others, allows
+independent scaling, and enhances fault tolerance.
