@@ -1,0 +1,51 @@
+https://imgur.com/PHQy8Cn  - link to img
+
+For every additional element, why you are adding it?
+Firewall:
+Added for enhanced security, controlling and monitoring incoming and outgoing traffic.
+
+SSL(certificate)
+Configured to serve www.foobar.com over HTTPS, ensuring encrypted communication.
+
+Monitoring Clients
+Collect data related to the performance, health, and security of the infrastructure.
+
+What are firewalls for
+enhance security, controlling and monitoring incoming and outgoing traffic.
+
+Why is the traffic served over HTTPS
+ensures encrypted communication.
+
+What monitoring is used for
+Collect data related to the performance, health, and security of the infrastructure.
+
+How the monitoring tool is collecting data
+Monitoring tools collect data by actively or passively observing various aspects
+of the infrastructure, including server performance metrics, error logs, and
+security events. These tools may use agents installed on servers or collect data
+remotely through APIs or log analysis.
+
+Explain what to do if you want to monitor your web server QPS
+To monitor the web server's Queries Per Second (QPS), you can use the monitoring
+tool to track the number of incoming requests over a specific time period.
+Analyzing QPS helps understand server load and performance.
+
+You must be able to explain what the issues are with this infrastructure:
+Why terminating SSL at the load balancer level is an issue
+Issue: Terminating SSL at the load balancer level exposes decrypted traffic
+between the load balancer and servers, potentially compromising data security.
+
+Mitigation: SSL termination should occur at the web servers, ensuring end-to-end encryption.
+
+Why having only one MySQL server capable of accepting writes is an issue
+Issue: Having only one MySQL server capable of accepting writes is a single point
+of failure for write operations.
+Mitigation: Implement a Primary-Replica (Master-Slave) MySQL cluster for redundancy
+and failover.
+
+Why having servers with all the same components
+(database, web server and application server) might be a problem
+Issue: Servers with identical components increase the risk of a widespread
+failure affecting all servers.
+Mitigation: Introduce diversity in server configurations, ensuring that a
+failure in one component doesn't impact all servers in the same way.
