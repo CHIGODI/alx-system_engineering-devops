@@ -29,3 +29,14 @@ easy retrival, management and modification
 What is the server using to communicate with the computer of the user requesting the website?
 The server is using a HTTP protocal over a network to communcate with the user
 requesting the website
+
+
+SPOF(Single point of failure)?
+On the design we only have one server, which is depended bythe whole infrastructure this poses risk of downtime during server failure
+
+Downtime when maintanance needed.
+when maintanance is needed the server needs to be restartedin order to deploy new code hence causing downtime
+
+cannot scale up
+the infrastructure cannot scale up because the server will because there is no redundant servers
+one server can easily be overwhelmed by many requests.
