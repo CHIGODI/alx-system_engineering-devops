@@ -1,0 +1,53 @@
+https://imgur.com/O1MBGhG - link to img
+
+For every additional element, why you are adding it?
+We are adding more server to ensure redandancy this will help solve problem of
+downtime incase one server fails
+we add a load balancer to help distribute traffic/reuqets to the servers
+
+What distribution algorithm your load balancer is configured with and how it
+works?
+Round-robin algorithm - Just like the name suggets this algorithm distributes request
+	    	   from one server to another and back in a circular manner
+		   Each server in the pool is selected in turn to handle the
+		   next request, and the cycle repeats.
+
+Is your load-balancer enabling an Active-Active or Active-Passive setup, explain
+the difference between both?
+my design is enabling active-active
+all servers work together distributing the load to server requests
+
+How a database Primary-Replica (Master-Slave) cluster works
+The primary node (master) handles write operations, and changes are replicated
+to the replica nodes (slaves) for read operations.
+
+What is the difference between the Primary node and the Replica node in regard to the application
+The primary node handles write operations, while replica nodes are read-only
+serving read queries and maintaining synchronization.
+
+Where are SPOF
+Location: The potential SPOF in the infrastructure is the load balancer (HAproxy).
+Concern: If the load balancer fails, there's a risk of downtime since it is the
+sole point responsible for distributing traffic among the servers.
+Mitigation: To address this, a high-availability configuration for the load
+balancer could be considered, where multiple instances are set up in a redundant
+manner to ensure continued operation even if one instance fails.
+
+Security issues (no firewall, no HTTPS)
+No Firewall:
+Concern: The absence of a firewall exposes servers and the database to potential
+security threats, including unauthorized access and malicious attacks.
+Mitigation: Implementing a firewall can help control and monitor incoming and
+outgoing traffic, adding a layer of security to the infrastructure.
+
+No HTTPS:
+Concern: The lack of HTTPS poses a security risk during data transmission,
+as data is transferred in plain text, susceptible to interception.
+Mitigation: Configuring HTTPS ensures the encryption of data during transmission
+preventing unauthorized access and ensuring secure communication between clients
+and the web server.
+
+No monitoring
+Lack of monitoring tools means there's no real-time visibility into the
+performance, health, and potential issues of the infrastructure.
+Monitoring is crucial for identifying and addressing issues promptly.
