@@ -15,7 +15,7 @@ used in the authentication process.
    script locally on your Linux machine.
 2. Use `tcpdump` to sniff the network traffic and extract the password used in
    the authentication process.
-3. Paste the password found in your answer file.
+
 
 ## Task 1: Dictionary Attack
 
@@ -31,4 +31,4 @@ allowing us to access the SSH account via IP address `127.0.0.1` and port `2222`
 3. Obtain a password dictionary.
 4. Install and use Hydra to attempt a brute force attack on the SSH account
    "sylvain" using the Docker container.
-5. Once the password is found (hint: it's 11 characters long), share it in your answer file.
+5. Once the password is found (hint: it's 11 characters long)
