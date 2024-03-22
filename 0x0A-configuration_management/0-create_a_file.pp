@@ -1,3 +1,5 @@
+#This manifest creates a file with given content
+
 file { '/tmp/school':
   mode    => '0744',
   owner   => 'www-data',
