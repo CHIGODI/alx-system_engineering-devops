@@ -27,19 +27,19 @@ tasks.
 ## 0. Create a File
 Using Puppet, create a file in /tmp.
 
-$ File path: /tmp/school
-$ File permission: 0744
-$ File owner: www-data
-$ File group: www-data
-$ File content: "I love Puppet"
+$ File path: /tmp/school </br>
+$ File permission: 0744  </br>
+$ File owner: www-data  </br>
+$ File group: www-data  </br>
+$ File content: "I love Puppet" </br>
 
 ## 1. Install a Package
-$ Using Puppet, install flask from pip3.
-$ Install: flask
-$ Version: 2.1.0
+$ Using Puppet, install flask from pip3. </br>
+$ Install: flask  </br>
+$ Version: 2.1.0  </br>
 
 ## 2. Execute a Command
-Using Puppet, create a manifest that kills a process named killmenow.
+Using Puppet, create a manifest that kills a process named killmenow. </br>
 
-$ Must use the exec Puppet resource.
-$ Must use pkill.
+$ Must use the exec Puppet resource.  </br>
+$ Must use pkill.  </br>
