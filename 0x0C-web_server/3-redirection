@@ -18,4 +18,4 @@ sudo service nginx restart
 sudo sed -i '/^}$/i \ \n\tlocation \/redirect_me {return 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;}' /etc/nginx/sites-available/default
 
 # start nginx
-sudo service nginx start
+sudo service nginx restart
