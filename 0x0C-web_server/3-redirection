@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# install and configures a nginx server
+
+#install nginx server
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+# Ensure Nginx listens on port 80
+sudo sed -i 's/listen 80 default_server;/listen 80;/g' /etc/nginx/sites-available/default
+
+#content to be loaded
+echo "Hello World!" |sudo tee /var/www/html/index.html > /dev/null
+
+redirect_context="location /redirect_me {\n    return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4\n}"
+
+sudo sed -i '/^}$/i \ \n\tlocation \/redirect_me {return 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;}' /etc/nginx/sites-available/default
+
+#reload nginx
+sudo service nginx restart
