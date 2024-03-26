@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 # install and configures a nginx server
 
-#if nginx is present uninstall
-sudo apt-get purge nginx nginx-common -y
-
 #install nginx server
 sudo apt-get -y update
 sudo apt-get -y install nginx
@@ -13,6 +10,9 @@ sudo sed -i 's/listen 80 default_server;/listen 80;/g' /etc/nginx/sites-availabl
 
 #content to be loaded
 echo "Hello World!" |sudo tee /var/www/html/index.html > /dev/null
+
+#reload nginx
+sudo service nginx restart
 
 sudo sed -i '/^}$/i \ \n\tlocation \/redirect_me {return 301 https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4;}' /etc/nginx/sites-available/default
 
