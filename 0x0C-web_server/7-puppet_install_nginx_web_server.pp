@@ -1,3 +1,6 @@
+#This manifest configires a nginx server with default pot 80
+# also has a redirect 301
+
 exec { 'apt-get-update':
   command => '/usr/bin/apt-get -y update',
   path    => '/usr/bin',
