@@ -31,3 +31,9 @@ file { '/var/www/html/index.html':
   ensure  => file,
   content => 'Hello World!',
 }
+
+exec { 'nginx-restart':
+  command     => '/usr/sbin/service nginx restart',
+  refreshonly => true,
+  subscribe   => [Exec['apt-get-update'], Package['nginx'], File['/etc/nginx/sites-available/default'], File['/var/www/html/index.html']],
+}
