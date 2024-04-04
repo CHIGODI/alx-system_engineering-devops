@@ -23,5 +23,7 @@ backend web_backend
    server 495807-web-02 34.202.157.18:80 check
 EOF
 
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
 # restart haproxy for configurations to take place
 sudo systemctl restart haproxy
