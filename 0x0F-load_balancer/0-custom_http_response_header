@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-# redirects to the said path permanently
+# Add custome header to server header responses
 
-#update packages
-sudo apt-get -y update
+sudo apt-get update -y
 
-#install nginx
-sudo apt-get -y instal nginx
+sudo apt-get install -y nginx
 
-#configure the nginx server
+# content to be loaded by root request
+echo "Hello World!" |sudo tee /var/www/html/index.html > /dev/null
+
 sudo tee /etc/nginx/sites-available/default >/dev/null <<EOF
 server {
         listen 80;
