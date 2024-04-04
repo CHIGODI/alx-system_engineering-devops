@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Installs and configures HAproxy on lb-01 server
 
+sudo apt-get -y update
+
 # enable a dedicated PPA
 sudo apt-get -y install --no-install-recommends software-properties-common
 sudo add-apt-repository -y ppa:vbernat/haproxy-2.8
@@ -25,5 +27,5 @@ EOF
 
 echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
 
-# restart haproxy for configurations to take place
-sudo systemctl restart haproxy
+# Start Haproxy
+sudo service haproxy start
