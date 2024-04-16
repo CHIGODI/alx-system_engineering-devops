@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+sudo tee -a ./ha > /dev/null <<EOF
+$(echo -e "\n")
+frontend http
+   bind *:80
+   default_backend web_backend
+
+backend web_backend
+   balance roundrobin
+   server 495807-web-01 54.157.181.23:80 check
+   server 495807-web-02 34.202.157.18:80 check
+EOF

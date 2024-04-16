@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+username="$1"
+
+# Create the user without prompting
+sudo useradd -m "$username" && \
+echo "$username:password" | sudo chpasswd
+
+# Switch to the new user and execute the command
+sudo su - "$username" -c whoami
