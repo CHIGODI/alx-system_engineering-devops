@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Creating a backup of databases in tar format
+
+
+MYSQL_PASSWORD="$1"
+
+# Get current date in the required format (day-month-year)
+DATE=$(date +%d-%m-%Y)
+
+# Backup file name
+BACKUP_FILE="backup.sql"
+
+# Connect to MySQL and create backup
+mysqldump -u root -p"${MYSQL_PASSWORD}" --all-databases > "${BACKUP_FILE}"
+
+# Compress backup file into tar.gz archive with the specified naming format
+ARCHIVE_NAME="${DATE}.tar.gz"
+
+tar -czvf "${ARCHIVE_NAME}" "${BACKUP_FILE}"
