@@ -14,11 +14,12 @@ if __name__ == "__main__":
 
     for user in users.json():
         if user.get('id') == int(sys.argv[1]):
-            employee_name = user.get('name')
+            employee_name = user.get('username')
     for todo in todos.json():
         if todo.get('userId') == int(sys.argv[1]):
             csv.append(
-                f'"{sys.argv[1]}", "{employee_name}", "{todo.get("completed")}",'
+                f'"{sys.argv[1]}", "{employee_name}",'
+                f'"{todo.get("completed")}",'
                 f'"{todo.get("title")}"'
             )
 
