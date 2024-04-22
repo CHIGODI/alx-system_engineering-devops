@@ -13,15 +13,16 @@ if __name__ == "__main__":  # Correctly check for __name__ and __main__
     data = {}
 
     for user in users.json():
+        user_id = user.get('id')
         list_1 = []
         for todo in todos.json():
-            employee_name = user.get('username')
-            list_1.append({
-                "username": employee_name,
-                "task": todo.get("title"),
-                "completed": todo.get("completed"),
-            })
-
+            if user.get('id') == user_id:
+                employee_name = user.get('username')
+                list_1.append({
+                    "username": employee_name,
+                    "task": todo.get("title"),
+                    "completed": todo.get("completed"),
+                })
         data[user.get('id')] = list_1
 
     filename = 'todo_all_employees.json'
