@@ -17,8 +17,10 @@ if __name__ == "__main__":
             employee_name = user.get('name')
     for todo in todos.json():
         if todo.get('userId') == int(sys.argv[1]):
-            csv.append(f'{sys.argv[1]}, {employee_name},
-                       {todo.get("completed")}, {todo.get("title")}')
+            csv.append(
+                f'{sys.argv[1]}, {employee_name}, {todo.get("completed")},'
+                f'{todo.get("title")}'
+            )
 
     filename = f'{sys.argv[1]}.csv'
     with open(filename, mode='w', newline='') as file:
