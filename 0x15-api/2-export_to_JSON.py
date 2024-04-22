@@ -2,9 +2,10 @@
 
 """ employee to do to json """
 
+import json
 import requests
 import sys
-import json
+
 
 if __name__ == "__main__":
     todos = requests.get('https://jsonplaceholder.typicode.com/todos')
