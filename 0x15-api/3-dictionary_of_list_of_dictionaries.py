@@ -6,7 +6,8 @@ import json
 import requests
 import sys
 
-if __name__ == "__main__":  # Correctly check for __name__ and __main__
+
+if __name__ == "__main__":
     todos = requests.get('https://jsonplaceholder.typicode.com/todos')
     users = requests.get('https://jsonplaceholder.typicode.com/users')
     employee_name = ''
@@ -16,14 +17,15 @@ if __name__ == "__main__":  # Correctly check for __name__ and __main__
         user_id = user.get('id')
         list_1 = []
         for todo in todos.json():
-            if user.get('id') == user_id:
+            if todo.get('userId') == user_id:
                 employee_name = user.get('username')
                 list_1.append({
                     "username": employee_name,
                     "task": todo.get("title"),
-                    "completed": todo.get("completed"),
+                    "completed": todo.get("completed")
                 })
-        data[user.get('id')] = list_1
+
+        data.update({user.get('id'): list_1})
 
     filename = 'todo_all_employees.json'
     with open(filename, mode='w', encoding='utf-8') as file:
