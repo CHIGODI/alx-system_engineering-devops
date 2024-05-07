@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-""" """
+"""
+0-subs
+"""
 import requests
 
 
 def number_of_subscribers(subreddit):
-    """ """
+    """ returns number of subs for a subreddit """
     if subreddit:
         url = f'https://www.reddit.com/r/{subreddit}/about.json'
         headers = {'User-Agent': 'Chrome'}
