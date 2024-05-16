@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Check if Gunicorn process is running
+if pgrep -x "gunicorn" >/dev/null; then
+    echo "Reloading Gunicorn gracefully..."
+
+    # Send graceful reload signal to Gunicorn master process
+    pkill -HUP gunicorn
+
+    echo "Gunicorn reloaded gracefully."
+else
+    echo "Gunicorn is not running."
+fi
